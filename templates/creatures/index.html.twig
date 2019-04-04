@@ -1,0 +1,43 @@
+<!-- templates/creatures/index.php
+ 
+
+ -->
+
+
+{% for creature in creatures %}
+	
+	
+	<div class="row">
+		<div class="col-md-4">
+			<a href="#">
+				<img class="img-fluid rounded mb-3 mb-md-0" src="{{ asset('build/assets/images/'~creature.image) }}" alt="{{ creature.image }}">
+			</a>
+		</div>
+		<div class="col-md-8">
+			<h3>{{ creature.nom }}</h3>
+			<p class="lead">
+				dans
+				<a href="artiste_details.html">{{ creature.film.titre }}</a> le {{ creature.dateCreation | date('d-m-Y') }}
+			</p>
+			<p>{{ creature.texteLead }}</p>
+			<a class="btn btn-primary" href="{{ path('app_creatures_show', {'id': creature.id, 'slug': creature.slug}) }}">Voir la créature</a>
+			<a class="btn btn-success" href="{{ path('app_creatures_edit', {'id': creature.id, 'slug': creature.slug}) }}">Modifier</a>
+            <form action="" style="display:inline-block;">
+              <button class="btn btn-danger">Supprimer</button>
+            </form>
+			<hr/>
+			<ul class="list-inline tags">
+				
+				{% for tag in creature.tags %}
+					<li>
+						<a href="#" class="btn btn-default btn-xs">{{ tag.nom }}</a>
+					</li>
+				{% endfor %}
+			
+			</ul>
+		</div>
+	</div>
+	
+	<hr>
+
+{% endfor %}

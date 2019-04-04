@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Creatures{% endblock %}
+
+{% block content1 %}
+    <h1>Modifier la Creature</h1>
+
+    {{ include('creatures/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_creatures_show', {'id' : creature.id, 'slug' : creature.slug}) }}">back to list</a>
+
+    {{ include('creatures/_delete_form.html.twig') }}
+{% endblock %}

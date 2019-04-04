@@ -1,0 +1,24 @@
+
+<!--templates/pages/index.html.twig
+    Pages:
+        id
+        titre
+        slug
+        texte
+        tri
+
+-->
+    <ul class="navbar-nav ml-auto">
+        
+        {% for page in pages %}
+            
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ path('app_pages_show', {id: page.id, slug: page.slug}) }}">
+                    {{ page.titre }}
+                </a>
+            </li>
+            
+        {% endfor %}
+        
+    </ul>
+    

@@ -1,0 +1,40 @@
+
+
+
+{{ form_start(form) }}
+    
+    
+    <div class="form-group">
+        {{ form_widget(form.nom) }}
+    </div>
+    <div class="form-group">
+        {{ form_widget(form.textelead) }}
+    </div>
+    <div class="form-group">
+        {{ form_widget(form.textesuite) }}
+    </div>
+    <div class="form-group">
+        {{ form_widget(form.image) }}
+    </div>
+    <div class="form-group">
+        {{ form_widget(form.film) }}
+    </div>
+
+	<div class="checkboxes check-tags" >
+		{% for tag in form.tags %}
+			<div>
+				{{ form_widget(tag) }}
+				<span>{{ form_label(tag) }}</span>
+				<span>{{ form_errors(tag) }}</span>
+			</div>
+		{% endfor %}
+	</div>
+
+	<div class="form-group">
+		<button class="btn btn-success">{{ submit }}</button>
+	</div>
+
+    
+{{ form_end(form) }}
+
+

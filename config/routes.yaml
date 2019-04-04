@@ -1,0 +1,5 @@
+index:
+    path: /
+    controller: App\Controller\PagesController::show
+    defaults:
+        id : 1

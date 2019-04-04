@@ -1,0 +1,15 @@
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ creature.nom }}{% endblock %}
+
+{% block content1 %}
+	
+	<h1 class="mt-4">Résultats de votre recherche : <small>{{ motsCles }}</small></h1>
+	
+	<hr>
+	
+	{% include 'creatures/index.html.twig' %}
+
+{% endblock %}
