@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% include 'partials/head.html.twig' %}
+</head>
+<body>
+{% block comments %}
+    <!--
+        Base des templates
+    -->
+{% endblock %}
+<!-- Navigation -->
+<!--je capte id de la Page pour pouvoir ajouter la class 'active' à un li dans le menu
+    je dois le faire dans le fichier base.html.twig car dans les includes il ne se capte pas
+     et je le passe dans le controller-->
+{% set idPage = app.request.attributes.get("id") %}
+
+{{ render(controller('App\\Controller\\PagesController::index', {'id' : idPage} )) }}
+
+<div class="container">
+    
+    <div class="row">
+        
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+            <!-- Affichage des messege de FlashBag -->
+            {% for msg in app.flashes('success')  %}
+                <div class="btn-success">
+                {{msg }}</div>
+            {% endfor %}
+            
+            <!-- chargement de la partie principal -->
+            {% block content1 %}{% endblock %}
+        
+        </div>
+        
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+            <!-- Form pour la recherche -->
+            {% include 'creatures/search.html.twig' %}
+            <!-- List des Tags -->
+            {{ render(controller('App\\Controller\\TagsController::index')) }}
+        
+        </div>
+    
+    </div>
+    <!-- /.row -->
+
+</div>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

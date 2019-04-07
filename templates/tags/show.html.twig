@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tags{% endblock %}
+
+{% block content1 %}
+    
+    <h1 class="mt-4">{{ tag.nom }}</h1>
+    
+    <hr>
+    
+    
+    
+    
+    <!-- Project One -->
+    <div class="row">
+        <div class="col-md-4">
+            <a href="{{ path('app_tags_show', {'id': tag.id, 'slug':tag.slug}) }}">
+                <img class="img-fluid rounded mb-3 mb-md-0" src="{{ asset('build/assets/images/'~random(24,30)~'.jpg') }}" alt="">
+            </a>
+        </div>
+        <div class="col-md-8">
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores aut et expedita facere, fuga laudantium magni minima molestias nemo nulla pariatur possimus quisquam rerum, sapiente sint suscipit tempora ut.</p>
+            <hr/>
+            <h2>Créatures du tag</h2>
+            
+            <ul>
+                {% for creature in creatures %}
+                    
+                    <li><a href="{{ path('app_creatures_show', {'id': creature.id, 'slug': creature.slug}) }}">{{ creature.nom }}</a></li>
+                
+                {% endfor %}
+            </ul>
+        
+        
+        </div>
+    </div>
+    <!-- /.row -->
+    <hr>
+{% endblock %}

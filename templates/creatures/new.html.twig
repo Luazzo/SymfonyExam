@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Creatures{% endblock %}
+
+{% block content1 %}
+
+<!--
+    ./templates/creatures/new.html.twig
+    Affichage de la page avec un form pour creation d'une Creature
+-->
+    
+    <h1>Ajout d'une Creature</h1>
+
+    {{ include('creatures/_form.html.twig') }}
+
+    <a class="btn btn-primary" href="{{ path('app_pages_show', {'id' : 2, 'slug' : 'creatures'}) }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Creatures{% endblock %}
+
+{% block content1 %}
+
+<!--
+    ./templates/creatures/edit.html.twig
+    Affichage d'une page avec un form pour modifier une Creature
+-->
+    <h1>Modifier la Creature</h1>
+
+    {{ include('creatures/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <hr/>
+    <a class="btn btn-primary" href="{{ path('app_creatures_show', {'id' : creature.id, 'slug' : creature.slug}) }}">back to list</a>
+<hr/>
+    {{ include('creatures/_delete_form.html.twig') }}
+{% endblock %}
