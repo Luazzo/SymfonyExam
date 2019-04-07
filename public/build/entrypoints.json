@@ -2,19 +2,19 @@
   "entrypoints": {
     "app": {
       "js": [
-        "/build/runtime.js",
-        "/build/vendors~app~bootstrap.bundle.js",
-        "/build/app.js"
+        "/build/runtime.1ba6bf05.js",
+        "/build/0.c90fd7d1.js",
+        "/build/app.11a9cfc9.js"
       ],
       "css": [
-        "/build/app.css"
+        "/build/app.8d9d3ad9.css"
       ]
     },
     "bootstrap.bundle": {
       "js": [
-        "/build/runtime.js",
-        "/build/vendors~app~bootstrap.bundle.js",
-        "/build/bootstrap.bundle.js"
+        "/build/runtime.1ba6bf05.js",
+        "/build/0.c90fd7d1.js",
+        "/build/bootstrap.bundle.1c860675.js"
       ]
     }
   }
